@@ -1,260 +1,258 @@
-# 🤯 HEAD
+# 🤯 ГОЛОВНИЙ ТEҐ
 
-> A simple guide to HTML `<head>` elements
+> Простий посібник з елементів HTML `<head>`
 
-[![Contributors](https://img.shields.io/github/contributors/joshbuchea/head.svg?style=for-the-badge)](https://github.com/joshbuchea/HEAD/graphs/contributors)
+[![Учасники](https://img.shields.io/github/contributors/joshbuchea/head.svg?style=for-the-badge)](https://github.com/joshbuchea/HEAD/graphs/contributors)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
-[![Follow @joshbuchea on Mastodon](https://img.shields.io/badge/Follow_@joshbuchea-purple?logo=mastodon&logoColor=white&style=for-the-badge)](https://hachyderm.io/@joshbuchea)
+[![Підписатися на @joshbuchea у Mastodon](https://img.shields.io/badge/Follow_@joshbuchea-purple?logo=mastodon&logoColor=white&style=for-the-badge)](https://hachyderm.io/@joshbuchea)
 
-## Table of Contents
+## Зміст
 
-- [Recommended Minimum](#recommended-minimum)
-- [Elements](#elements)
-- [Meta](#meta)
-- [Link](#link)
-- [Icons](#icons)
-- [Social](#social)
+- [Рекомендований мінімум](#recommended-minimum)
+- [Елементи](#elements)
+- [Мета-теги](#meta)
+- [Посилання](#link)
+- [Іконки](#icons)
+- [Соціальні мережі](#social)
   - [Facebook Open Graph](#facebook-open-graph)
   - [Twitter Card](#twitter-card)
-  - [Twitter Privacy](#twitter-privacy)
+  - [Twitter Приватність](#twitter-privacy)
   - [Schema.org](#schemaorg)
   - [Pinterest](#pinterest)
-  - [Facebook Instant Articles](#facebook-instant-articles)
+  - [Facebook Миттєві статті](#facebook-instant-articles)
   - [OEmbed](#oembed)
   - [QQ/Wechat](#qqwechat)
-- [Browsers / Platforms](#browsers--platforms)
+- [Браузери / Платформи](#browsers--platforms)
   - [Apple iOS](#apple-ios)
   - [Google Android](#google-android)
   - [Google Chrome](#google-chrome)
   - [Microsoft Internet Explorer](#microsoft-internet-explorer)
-- [Browsers (Chinese)](#browsers-chinese)
-  - [360 Browser](#360-browser)
-  - [QQ Mobile Browser](#qq-mobile-browser)
-  - [UC Mobile Browser](#uc-mobile-browser)
-- [App Links](#app-links)
-- [Other Resources](#other-resources)
-- [Related Projects](#related-projects)
-- [Other Formats](#other-formats)
-- [Translations](#-translations)
-- [Contributing](#-contributing)
-  - [Contributors](#contributors)
-- [Author](#-author)
-- [License](#-license)
+- [Браузери (Китайські)](#browsers-chinese)
+  - [360 Браузер](#360-browser)
+  - [QQ Мобільний Браузер](#qq-mobile-browser)
+  - [UC Мобільний Браузер](#uc-mobile-browser)
+- [Посилання на додатки](#app-links)
+- [Інші ресурси](#other-resources)
+- [Пов'язані проекти](#related-projects)
+- [Інші формати](#other-formats)
+- [Переклади](#-translations)
+- [Внесок](#-contributing)
+  - [Учасники](#contributors)
+- [Автор](#-author)
+- [Ліцензія](#-license)
 
-## Recommended Minimum
+## Рекомендований мінімум
 
-Below are the essential elements for any web document (websites/apps):
+Нижче наведені основні елементи для будь-якого веб-документа (веб-сайти/додатки):
 
 ```html
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
-  The above 2 meta tags *must* come first in the <head>
-  to consistently ensure proper document rendering.
-  Any other head element should come *after* these tags.
+  Два мета-теги вище ПОВИННІ йти першими в розділі <head>
+  щоб послідовно забезпечити правильне відтворення документа.
+  Будь-які інші елементи head повинні йти ПІСЛЯ цих тегів.
  -->
-<title>Page Title</title>
+<title>Назва сторінки</title>
 ```
 
-`meta charset` - defines the encoding of the website, `utf-8` is the standard
+`meta charset` - визначає кодування веб-сайту, `utf-8` є стандартом
 
-`meta name="viewport"` - viewport settings related to mobile responsiveness
+`meta name="viewport"` - налаштування viewport, пов'язані з мобільною адаптивністю
 
-`width=device-width` - use the physical width of the device (great for mobile!)
+`width=device-width` - використання фізичної ширини пристрою (чудово для мобільних!)
 
-`initial-scale=1` - the initial zoom, 1 means no zoom
+`initial-scale=1` - початковий масштаб, 1 означає без масштабування
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Elements
+## Елементи
 
-Valid `<head>` elements include `meta`, `link`, `title`, `style`, `script`, `noscript`, and `base`.
+Дійсні елементи `<head>` включають `meta`, `link`, `title`, `style`, `script`, `noscript` та `base`.
 
-These elements provide information for how a document should be perceived, and rendered, by web technologies. e.g. browsers, search engines, bots, etc.
+Ці елементи надають інформацію про те, як документ повинен сприйматися та відтворюватися веб-технологіями, наприклад, браузерами, пошуковими системами, ботами тощо.
 
 ```html
 <!--
-  Set the character encoding for this document, so that
-  all characters within the UTF-8 space (such as emoji)
-  are rendered correctly.
+  Встановіть кодування символів для цього документа, 
+  щоб усі символи в просторі UTF-8 (як-от емодзі)
+  відображалися правильно.
 -->
 <meta charset="utf-8">
 
-<!-- Set the document's title -->
-<title>Page Title</title>
+<!-- Встановіть назву документа -->
+<title>Назва сторінки</title>
 
-<!-- Set the base URL for all relative URLs within the document -->
+<!-- Встановіть базову URL-адресу для всіх відносних URL-адрес у документі -->
 <base href="https://example.com/page.html">
 
-<!-- Link to an external CSS file -->
+<!-- Посилання на зовнішній CSS-файл -->
 <link rel="stylesheet" href="styles.css">
 
-<!-- Used for adding in-document CSS -->
+<!-- Використовується для додавання CSS безпосередньо в документ -->
 <style>
   /* ... */
 </style>
 
-<!-- JavaScript & No-JavaScript tags -->
+<!-- Теги JavaScript та No-JavaScript -->
 <script src="script.js"></script>
 <script>
-  // function(s) go here
+  // функція(ї) розміщується тут
 </script>
 <noscript>
-  <!-- No JS alternative -->
+  <!-- Альтернатива без JavaScript -->
 </noscript>
 ```
 
-**[⬆ back to top](#table-of-contents)**
-
-## Meta
+## Мета-теги
 
 ```html
 <!--
-  The following 2 meta tags *must* come first in the <head>
-  to consistently ensure proper document rendering.
-  Any other head element should come *after* these tags.
+  Наступні 2 мета-теги ПОВИННІ йти першими в розділі <head>
+  щоб послідовно забезпечити правильне відтворення документа.
+  Будь-які інші елементи head повинні йти ПІСЛЯ цих тегів.
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!--
-  Allows control over where resources are loaded from.
-  Place as early in the <head> as possible, as the tag  
-  only applies to resources that are declared after it.
+  Дозволяє контролювати звідки завантажуються ресурси.
+  Розмістіть якомога раніше в розділі <head>, оскільки тег
+  застосовується лише до ресурсів, оголошених після нього.
 -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 
-<!-- Name of web application (only should be used if the website is used as an app) -->
-<meta name="application-name" content="Application Name">
+<!-- Назва веб-додатку (використовується лише якщо веб-сайт використовується як додаток) -->
+<meta name="application-name" content="Назва Додатку">
 
-<!-- Theme Color for Chrome, Firefox OS and Opera -->
+<!-- Колір теми для Chrome, Firefox OS та Opera -->
 <meta name="theme-color" content="#4285f4">
 
-<!-- Short description of the document (limit to 150 characters) -->
-<!-- This content *may* be used as a part of search engine results. -->
-<meta name="description" content="A description of the page">
+<!-- Короткий опис документа (обмеження до 150 символів) -->
+<!-- Цей вміст МОЖЕ бути використаний як частина результатів пошуку. -->
+<meta name="description" content="Опис сторінки">
 
-<!-- Control the behavior of search engine crawling and indexing -->
-<meta name="robots" content="index,follow"><!-- All Search Engines -->
-<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+<!-- Контроль поведінки пошукових павуків при індексації -->
+<meta name="robots" content="index,follow"><!-- Всі пошукові системи -->
+<meta name="googlebot" content="index,follow"><!-- Специфічно для Google -->
 
-<!-- Tells Google not to show the sitelinks search box -->
+<!-- Вказує Google не показувати поле пошуку сайтлінків -->
 <meta name="google" content="nositelinkssearchbox">
 
-<!-- Tells Google not to provide a translation for this document -->
+<!-- Вказує Google не надавати переклад для цього документа -->
 <meta name="google" content="notranslate">
 
-<!-- Verify website ownership -->
+<!-- Перевірка власності веб-сайту -->
 <meta name="google-site-verification" content="verification_token"><!-- Google Search Console -->
-<meta name="yandex-verification" content="verification_token"><!-- Yandex Webmasters -->
+<meta name="yandex-verification" content="verification_token"><!-- Яндекс Вебмайстер -->
 <meta name="msvalidate.01" content="verification_token"><!-- Bing Webmaster Center -->
-<meta name="alexaVerifyID" content="verification_token"><!-- Alexa Console -->
-<meta name="p:domain_verify" content="code_from_pinterest"><!-- Pinterest Console-->
+<meta name="alexaVerifyID" content="verification_token"><!-- Консоль Alexa -->
+<meta name="p:domain_verify" content="code_from_pinterest"><!-- Консоль Pinterest -->
 <meta name="norton-safeweb-site-verification" content="norton_code"><!-- Norton Safe Web -->
 
-<!-- Identify the software used to build the document (i.e. - WordPress, Dreamweaver) -->
+<!-- Визначення програмного забезпечення, використаного для створення документа (наприклад, WordPress, Dreamweaver) -->
 <meta name="generator" content="program">
 
-<!-- Short description of your document's subject -->
-<meta name="subject" content="your document's subject">
+<!-- Короткий опис теми вашого документа -->
+<meta name="subject" content="тема вашого документа">
 
-<!-- Gives a general age rating based on the document's content -->
+<!-- Надає загальну вікову категорію на основі вмісту документа -->
 <meta name="rating" content="General">
 
-<!-- Allows control over how referrer information is passed -->
+<!-- Дозволяє контролювати передачу інформації про реферера -->
 <meta name="referrer" content="no-referrer">
 
-<!-- Disable automatic detection and formatting of possible phone numbers -->
+<!-- Вимкнення автоматичного виявлення та форматування можливих номерів телефонів -->
 <meta name="format-detection" content="telephone=no">
 
-<!-- Completely opt out of DNS prefetching by setting to "off" -->
+<!-- Повністю відмовитися від префетчингу DNS, встановивши значення "off" -->
 <meta http-equiv="x-dns-prefetch-control" content="off">
 
-<!-- Specifies the document to appear in a specific frame -->
+<!-- Вказує документ для відображення у певному фреймі -->
 <meta http-equiv="Window-Target" content="_value">
 
-<!-- Geo tags -->
-<meta name="ICBM" content="latitude, longitude">
-<meta name="geo.position" content="latitude;longitude">
-<meta name="geo.region" content="country[-state]"><!-- Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
-<meta name="geo.placename" content="city/town"><!-- eg. content="New York City" -->
+<!-- Гео-теги -->
+<meta name="ICBM" content="широта, довгота">
+<meta name="geo.position" content="широта;довгота">
+<meta name="geo.region" content="країна[-область]"><!-- Код країни (ISO 3166-1): обов'язковий, код області (ISO 3166-2): необов'язковий; наприклад, content="UA" / content="UA-KY" -->
+<meta name="geo.placename" content="місто"><!-- наприклад, content="Київ" -->
 
-<!-- Web Monetization https://webmonetization.org/docs/getting-started -->
+<!-- Монетизація Веб (Web Monetization) https://webmonetization.org/docs/getting-started -->
 <meta name="monetization" content="$paymentpointer.example">
 ```
 
-- 📖 [Meta tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en)
-- 📖 [WHATWG Wiki: MetaExtensions](https://wiki.whatwg.org/wiki/MetaExtensions)
-- 📖 [ICBM on Wikipedia](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
-- 📖 [Geotagging on Wikipedia](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
+- 📖 [Мета-теги, які розуміє Google](https://support.google.com/webmasters/answer/79812?hl=en)
+- 📖 [WHATWG Wiki: Розширення мета-тегів](https://wiki.whatwg.org/wiki/MetaExtensions)
+- 📖 [ICBM у Вікіпедії](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
+- 📖 [Геотегування у Вікіпедії](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Link
+## Посилання
 
 ```html
-<!-- Points to an external stylesheet -->
+<!-- Посилання на зовнішню таблицю стилів -->
 <link rel="stylesheet" href="https://example.com/styles.css">
 
-<!-- Helps prevent duplicate content issues -->
+<!-- Допомагає запобігти проблемам з дубльованим контентом -->
 <link rel="canonical" href="https://example.com/article/?page=2">
 
-<!-- Links to an AMP HTML version of the current document -->
+<!-- Посилання на AMP HTML-версію поточного документа -->
 <link rel="amphtml" href="https://example.com/path/to/amp-version.html">
 
-<!-- Links to a JSON file that specifies "installation" credentials for the web applications -->
+<!-- Посилання на JSON-файл, що вказує облікові дані "інсталяції" для веб-додатків -->
 <link rel="manifest" href="manifest.json">
 
-<!-- Links to information about the author(s) of the document -->
+<!-- Посилання на інформацію про автора(ів) документа -->
 <link rel="author" href="humans.txt">
 
-<!-- Refers to a copyright statement that applies to the link's context -->
+<!-- Посилається на заяву про авторські права, що застосовується до контексту посилання -->
 <link rel="license" href="copyright.html">
 
-<!-- Gives a reference to a location in your document that may be in another language -->
+<!-- Надає посилання на місце в документі, яке може бути іншою мовою -->
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 
-<!-- Provides information about an author or another person -->
+<!-- Надає інформацію про автора чи іншу особу -->
 <link rel="me" href="https://google.com/profiles/thenextweb" type="text/html">
 <link rel="me" href="mailto:name@example.com">
 <link rel="me" href="sms:+15035550125">
 
-<!-- Links to a document that describes a collection of records, documents, or other materials of historical interest -->
+<!-- Посилання на документ, що описує збірку записів, документів чи інших матеріалів історичного інтересу -->
 <link rel="archives" href="https://example.com/archives/">
 
-<!-- Links to top level resource in an hierarchical structure -->
+<!-- Посилання на ресурс верхнього рівня в ієрархічній структурі -->
 <link rel="index" href="https://example.com/article/">
 
-<!-- Provides a self reference - useful when the document has multiple possible references -->
+<!-- Надає самопосилання - корисно, коли документ має кілька можливих посилань -->
 <link rel="self" type="application/atom+xml" href="https://example.com/atom.xml">
 
-<!-- The first, last, previous, and next documents in a series of documents, respectively -->
+<!-- Перший, останній, попередній і наступний документи в серії документів, відповідно -->
 <link rel="first" href="https://example.com/article/">
 <link rel="last" href="https://example.com/article/?page=42">
 <link rel="prev" href="https://example.com/article/?page=1">
 <link rel="next" href="https://example.com/article/?page=3">
 
-<!-- Used when a 3rd party service is utilized to maintain a blog -->
+<!-- Використовується, коли використовується стороння служба для ведення блогу -->
 <link rel="EditURI" href="https://example.com/xmlrpc.php?rsd" type="application/rsd+xml" title="RSD">
 
-<!-- Forms an automated comment when another WordPress blog links to your WordPress blog or post -->
+<!-- Формує автоматичний коментар, коли інший блог WordPress посилається на ваш блог або пост -->
 <link rel="pingback" href="https://example.com/xmlrpc.php">
 
-<!-- Notifies a URL when you link to it on your document -->
+<!-- Сповіщає URL, коли ви посилаєтеся на нього у вашому документі -->
 <link rel="webmention" href="https://example.com/webmention">
 
-<!-- Enables posting to your own domain using a Micropub client -->
+<!-- Дозволяє публікувати на власному домені за допомогою клієнта Micropub -->
 <link rel="micropub" href="https://example.com/micropub">
 
-<!-- Open Search -->
-<link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title">
+<!-- Відкритий пошук -->
+<link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Назва пошуку">
 
-<!-- Feeds -->
+<!-- Стрічки -->
 <link rel="alternate" href="https://feeds.feedburner.com/example" type="application/rss+xml" title="RSS">
 <link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3">
 
-<!-- Prefetching, preloading, prebrowsing -->
-<!-- More info: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
+<!-- Префетчинг, попереднє завантаження, попереднє перегортання -->
+<!-- Більше інформації: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 <link rel="dns-prefetch" href="//example.com/">
 <link rel="preconnect" href="https://www.example.com/">
 <link rel="prefetch" href="https://www.example.com/">
@@ -262,75 +260,75 @@ These elements provide information for how a document should be perceived, and r
 <link rel="preload" href="image.png" as="image">
 ```
 
-- 📖 [Link Relations](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
+- 📖 [Зв'язки посилань](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Icons
+## Іконки
 
 ```html
-<!-- For IE 10 and below -->
-<!-- Place favicon.ico in the root directory - no tag necessary -->
+<!-- Для IE 10 та нижче -->
+<!-- Розмістіть favicon.ico в кореневому каталозі - додатковий тег не потрібен -->
 
-<!-- Icon in the highest resolution we need it for -->
+<!-- Іконка в найвищій роздільній здатності, яка нам потрібна -->
 <link rel="icon" sizes="192x192" href="/path/to/icon.png">
 
-<!-- Apple Touch Icon (reuse 192px icon.png) -->
+<!-- Apple Touch Icon (повторне використання іконки 192px) -->
 <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
 
-<!-- Safari Pinned Tab Icon -->
+<!-- Іконка закріпленої вкладки Safari -->
 <link rel="mask-icon" href="/path/to/icon.svg" color="blue">
 ```
 
-- 📖 [All About Favicons (And Touch Icons)](https://bitsofco.de/all-about-favicons-and-touch-icons/)
-- 📖 [Creating Pinned Tab Icons](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html)
-- 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
-- 📖 [Icons & Browser Colors](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
+- 📖 [Все про Favicon (і сенсорні іконки)](https://bitsofco.de/all-about-favicons-and-touch-icons/)
+- 📖 [Створення іконок закріплених вкладок](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html)
+- 📖 [Шпаргалка з Favicon](https://github.com/audreyr/favicon-cheat-sheet)
+- 📖 [Іконки та кольори браузера](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Social
+## Соціальні мережі
 
 ### Facebook Open Graph
-> Most content is shared to Facebook as a URL, so it's important that you mark up your website with Open Graph tags to take control over how your content appears on Facebook. [More about Facebook Open Graph Markup](https://developers.facebook.com/docs/sharing/webmasters#markup) 
+> Більшість контенту діляться на Facebook як URL, тому важливо позначити ваш веб-сайт тегами Open Graph, щоб мати контроль над тим, як виглядає ваш контент на Facebook. [Детальніше про розмітку Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters#markup)
 
 ```html
 <meta property="fb:app_id" content="123456789">
 <meta property="og:url" content="https://example.com/page.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Content Title">
+<meta property="og:title" content="Назва Контенту">
 <meta property="og:image" content="https://example.com/image.jpg">
-<meta property="og:image:alt" content="A description of what is in the image (not a caption)">
-<meta property="og:description" content="Description Here">
-<meta property="og:site_name" content="Site Name">
-<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="Опис того, що зображено на зображенні (не підпис)">
+<meta property="og:description" content="Опис тут">
+<meta property="og:site_name" content="Назва Сайту">
+<meta property="og:locale" content="uk_UA">
 <meta property="article:author" content="">
 ```
 
-- 📖 [Open Graph protocol](http://ogp.me/)
-- 🛠 Test your page with the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- 📖 [Протокол Open Graph](http://ogp.me/)
+- 🛠 Перевірте свою сторінку за допомогою [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 
 ### Twitter Card
-> With Twitter Cards, you can attach rich photos, videos and media experiences to Tweets, helping to drive traffic to your website. [More about Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
+> За допомогою Twitter Cards ви можете додавати до твітів багаті фото, відео та медіа-контент, допомагаючи збільшити трафік на ваш веб-сайт. [Детальніше про Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
 
 ```html
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@site_account">
-<meta name="twitter:creator" content="@individual_account">
+<meta name="twitter:site" content="@обліковий_запис_сайту">
+<meta name="twitter:creator" content="@індивідуальний_обліковий_запис">
 <meta name="twitter:url" content="https://example.com/page.html">
-<meta name="twitter:title" content="Content Title">
-<meta name="twitter:description" content="Content description less than 200 characters">
+<meta name="twitter:title" content="Назва Контенту">
+<meta name="twitter:description" content="Опис контенту менше 200 символів">
 <meta name="twitter:image" content="https://example.com/image.jpg">
-<meta name="twitter:image:alt" content="A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.">
+<meta name="twitter:image:alt" content="Текстовий опис зображення, що передає його основну суть для користувачів з вадами зору. Максимум 420 символів.">
 ```
 
-- 📖 [Getting started with cards — Twitter Developers](https://dev.twitter.com/cards/getting-started)
-- 🛠 Test your page with the [Twitter Card Validator](https://cards-dev.twitter.com/validator)
+- 📖 [Початок роботи з картками — Twitter Розробникам](https://dev.twitter.com/cards/getting-started)
+- 🛠 Перевірте свою сторінку за допомогою [Twitter Card Validator](https://cards-dev.twitter.com/validator)
 
-### Twitter Privacy
-If you embed tweets in your website, Twitter can use information from your site to tailor content and suggestions to Twitter users. [More about Twitter privacy options](https://dev.twitter.com/web/overview/privacy#what-privacy-options-do-website-publishers-have).
+### Конфіденційність Twitter
+Якщо ви вбудовуєте твіти на свій веб-сайт, Twitter може використовувати інформацію з вашого сайту для налаштування контенту та пропозицій для користувачів Twitter. [Детальніше про параметри конфіденційності Twitter](https://dev.twitter.com/web/overview/privacy#what-privacy-options-do-website-publishers-have).
 ```html
-<!-- disallow Twitter from using your site's info for personalization purposes -->
+<!-- заборонити Twitter використовувати інформацію вашого сайту для персоналізації -->
 <meta name="twitter:dnt" content="on">
 ```
 
@@ -341,22 +339,22 @@ If you embed tweets in your website, Twitter can use information from your site 
     <head>
       <link rel="author" href="">
       <link rel="publisher" href="">
-      <meta itemprop="name" content="Content Title">
-      <meta itemprop="description" content="Content description less than 200 characters">
+      <meta itemprop="name" content="Назва Контенту">
+      <meta itemprop="description" content="Опис контенту менше 200 символів">
       <meta itemprop="image" content="https://example.com/image.jpg">
 ```
 
-**Note:** These meta tags require the `itemscope` and `itemtype` attributes to be added to the `<html>` tag.
+**Примітка:** Ці мета-теги вимагають додавання атрибутів `itemscope` та `itemtype` до тегу `<html>`.
 
-- 📖 [Getting Started - schema.org](https://schema.org/docs/gs.html)
-- 🛠 Test your page with the [Rich Results Test](https://search.google.com/test/rich-results)
+- 📖 [Початок роботи - schema.org](https://schema.org/docs/gs.html)
+- 🛠 Перевірте свою сторінку за допомогою [Rich Results Test](https://search.google.com/test/rich-results)
 
 ### Pinterest
 
-Pinterest lets you prevent people from saving things from your website, according [to their help center](https://help.pinterest.com/en/business/article/prevent-saves-to-pinterest-from-your-site). The `description` is optional.
+Pinterest дозволяє запобігти збереженню вмісту з вашого веб-сайту, відповідно до [їхнього центру допомоги](https://help.pinterest.com/en/business/article/prevent-saves-to-pinterest-from-your-site). `description` є необов'язковим.
 
 ```html
-<meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!">
+<meta name="pinterest" content="nopin" description="Вибачте, ви не можете зберігати вміст з мого веб-сайту!">
 ```
 
 ### Facebook Instant Articles
@@ -365,85 +363,85 @@ Pinterest lets you prevent people from saving things from your website, accordin
 <meta charset="utf-8">
 <meta property="op:markup_version" content="v1.0">
 
-<!-- The URL of the web version of your article -->
+<!-- URL веб-версії вашої статті -->
 <link rel="canonical" href="https://example.com/article.html">
 
-<!-- The style to be used for this article -->
+<!-- Стиль, який буде використано для цієї статті -->
 <meta property="fb:article_style" content="myarticlestyle">
 ```
 
-- 📖 [Creating Articles - Instant Articles](https://developers.facebook.com/docs/instant-articles/guides/articlecreate)
-- 📖 [Code Samples - Instant Articles](https://developers.facebook.com/docs/instant-articles/reference)
+- 📖 [Створення статей - Instant Articles](https://developers.facebook.com/docs/instant-articles/guides/articlecreate)
+- 📖 [Приклади коду - Instant Articles](https://developers.facebook.com/docs/instant-articles/reference)
 
 ### OEmbed
 
 ```html
 <link rel="alternate" type="application/json+oembed"
   href="https://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;format=json"
-  title="oEmbed Profile: JSON">
+  title="Профіль oEmbed: JSON">
 <link rel="alternate" type="text/xml+oembed"
   href="https://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;format=xml"
-  title="oEmbed Profile: XML">
+  title="Профіль oEmbed: XML">
 ```
 
-- 📖 [oEmbed format](https://oembed.com/)
+- 📖 [Формат oEmbed](https://oembed.com/)
 
 ### QQ/Wechat
 
-Users share web pages to qq wechat will have a formatted message
+Користувачі діляться веб-сторінками в qq wechat з форматованим повідомленням
 
 ```html
-<meta itemprop="name" content="share title">
+<meta itemprop="name" content="назва для спільного використання">
 <meta itemprop="image" content="http://imgcache.qq.com/qqshow/ac/v4/global/logo.png">
-<meta name="description" itemprop="description" content="share content">
+<meta name="description" itemprop="description" content="вміст для спільного використання">
 ```
-- 📖 [Code Format Docs](http://open.mobile.qq.com/api/mqq/index#api:setShareInfo)
+- 📖 [Документація з формату коду](http://open.mobile.qq.com/api/mqq/index#api:setShareInfo)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Browsers / Platforms
+## Браузери / Платформи
 
 ### Apple iOS
 
 ```html
-<!-- Smart App Banner -->
+<!-- Розумний App Banner -->
 <meta name="apple-itunes-app" content="app-id=APP_ID,affiliate-data=AFFILIATE_ID,app-argument=SOME_TEXT">
 
-<!-- Disable automatic detection and formatting of possible phone numbers -->
+<!-- Вимкнення автоматичного виявлення та форматування можливих номерів телефонів -->
 <meta name="format-detection" content="telephone=no">
 
-<!-- Launch Icon (180x180px or larger) -->
+<!-- Іконка запуску (180x180px або більше) -->
 <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
 
-<!-- Launch Screen Image -->
+<!-- Зображення екрану запуску -->
 <link rel="apple-touch-startup-image" href="/path/to/launch.png">
 
-<!-- Launch Icon Title -->
-<meta name="apple-mobile-web-app-title" content="App Title">
+<!-- Назва іконки запуску -->
+<meta name="apple-mobile-web-app-title" content="Назва Додатку">
 
-<!-- Enable standalone (full-screen) mode -->
+<!-- Увімкнення автономного (повноекранного) режиму -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<!-- Status bar appearance (has no effect unless standalone mode is enabled) -->
+<!-- Вигляд панелі статусу (не має ефекту, якщо не увімкнено автономний режим) -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<!-- iOS app deep linking -->
+<!-- Deep linking для iOS додатків -->
 <meta name="apple-itunes-app" content="app-id=APP-ID, app-argument=http/url-sample.com">
 <link rel="alternate" href="ios-app://APP-ID/http/url-sample.com">
 ```
 
-- 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+- 📖 [Налаштування веб-додатків](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 
 ### Google Android
 
 ```html
 <meta name="theme-color" content="#E64545">
 
-<!-- Add to home screen -->
+<!-- Додати на головний екран -->
 <meta name="mobile-web-app-capable" content="yes">
-<!-- More info: https://developer.chrome.com/multidevice/android/installtohomescreen -->
+<!-- Більше інформації: https://developer.chrome.com/multidevice/android/installtohomescreen -->
 
-<!-- Android app deep linking -->
+<!-- Deep linking для Android додатків -->
 <meta name="google-play-app" content="app-id=package-name">
 <link rel="alternate" href="android-app://package-name/http/url-sample.com">
 ```
@@ -453,24 +451,24 @@ Users share web pages to qq wechat will have a formatted message
 ```html
 <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
 
-<!-- Disable translation prompt -->
+<!-- Вимкнення запиту на переклад -->
 <meta name="google" content="notranslate">
 ```
 
 ### Microsoft Internet Explorer
 
 ```html
-<!-- Force IE 8/9/10 to use its latest rendering engine -->
+<!-- Примусити IE 8/9/10 використовувати найновішу версію рушія рендерингу -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<!-- Disable automatic detection and formatting of possible phone numbers by Skype Toolbar browser extension -->
+<!-- Вимкнення автоматичного виявлення та форматування можливих номерів телефонів розширенням браузера Skype Toolbar -->
 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
 
-<!-- Windows Tiles -->
+<!-- Плитки Windows -->
 <meta name="msapplication-config" content="/browserconfig.xml">
 ```
 
-Minimum required xml markup for `browserconfig.xml`:
+Мінімально необхідна XML розмітка для `browserconfig.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -486,62 +484,62 @@ Minimum required xml markup for `browserconfig.xml`:
 </browserconfig>
 ```
 
-- 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426.aspx)
+- 📖 [Довідка зі схеми конфігурації браузера](https://msdn.microsoft.com/en-us/library/dn320426.aspx)
 
-**[⬆ back to top](#table-of-contents)**
+## Браузери (Китайські)
 
-## Browsers (Chinese)
-
-### 360 Browser
+### 360 Браузер
 
 ```html
-<!-- Select rendering engine order -->
+<!-- Вибір порядку рушіїв рендерингу -->
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 ```
 
-### QQ Mobile Browser
+I'll translate the document to Ukrainian:
+
+### QQ Мобільний Браузер
 
 ```html
-<!-- Locks the screen into the specified orientation -->
+<!-- Блокує екран у вказаній орієнтації -->
 <meta name="x5-orientation" content="landscape/portrait">
 
-<!-- Display this document in fullscreen -->
+<!-- Показати цей документ у повноекранному режимі -->
 <meta name="x5-fullscreen" content="true">
 
-<!-- Document will be displayed in "application mode" (fullscreen, etc.) -->
+<!-- Документ буде відображатися в "режимі додатку" (повноекранний тощо) -->
 <meta name="x5-page-mode" content="app">
 ```
 
-### UC Mobile Browser
+### UC Мобільний Браузер
 
 ```html
-<!-- Locks the screen into the specified orientation -->
+<!-- Блокує екран у вказаній орієнтації -->
 <meta name="screen-orientation" content="landscape/portrait">
 
-<!-- Display this document in fullscreen -->
+<!-- Показати цей документ у повноекранному режимі -->
 <meta name="full-screen" content="yes">
 
-<!-- UC browser will display images even if in "text mode" -->
+<!-- UC браузер буде показувати зображення навіть в "текстовому режимі" -->
 <meta name="imagemode" content="force">
 
-<!-- Document will be displayed in "application mode"(fullscreen, forbidding gesture, etc.) -->
+<!-- Документ буде відображатися в "режимі додатку" (повноекранний, забороняючи жести тощо) -->
 <meta name="browsermode" content="application">
 
-<!-- Disabled the UC browser's "night mode" for this document -->
+<!-- Вимкнено "нічний режим" UC браузера для цього документа -->
 <meta name="nightmode" content="disable">
 
-<!-- Simplify the document to reduce data transfer -->
+<!-- Спростити документ для зменшення передачі даних -->
 <meta name="layoutmode" content="fitscreen">
 
-<!-- Disable the UC browser's feature of "scaling font up when there are many words in this document" -->
+<!-- Вимкнути функцію UC браузера "масштабування шрифту, коли в документі багато тексту" -->
 <meta name="wap-font-scale" content="no">
 ```
 
-- 📖 [UC Browser Docs](https://www.uc.cn/download/UCBrowser_U3_API.doc)
+- 📖 [Документація UC Browser](https://www.uc.cn/download/UCBrowser_U3_API.doc)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## App Links
+## Посилання на додатки
 
 ```html
 <!-- iOS -->
@@ -554,103 +552,108 @@ Minimum required xml markup for `browserconfig.xml`:
 <meta property="al:android:app_name" content="App Links">
 <meta property="al:android:package" content="org.applinks">
 
-<!-- Web fall back -->
+<!-- Резервний веб-варіант -->
 <meta property="al:web:url" content="https://applinks.org/documentation">
 ```
 
-- 📖 [App Links](https://developers.facebook.com/docs/applinks)
+- 📖 [Посилання на додатки](https://developers.facebook.com/docs/applinks)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Other Resources
+## Інші ресурси
 
-- 📖 [HTML5 Boilerplate Docs: The HTML](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
-- 📖 [HTML5 Boilerplate Docs: Extend and customize](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
+- 📖 [Документація HTML5 Boilerplate: HTML](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
+- 📖 [Документація HTML5 Boilerplate: Розширення та налаштування](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Related Projects
+## Пов'язані проекти
 
-- [Atom HTML Head Snippets](https://github.com/joshbuchea/atom-html-head-snippets) - Atom package for `HEAD` snippets
-- [Sublime Text HTML Head Snippets](https://github.com/marcobiedermann/sublime-head-snippets) - Sublime Text package for `HEAD` snippets
-- [head-it](https://github.com/hemanth/head-it) - CLI interface for `HEAD` snippets
-- [vue-head](https://github.com/ktquez/vue-head) - Manipulating the meta information of the `HEAD` tag for Vue.js
+- [Atom HTML Head Snippets](https://github.com/joshbuchea/atom-html-head-snippets) - Пакет Atom для фрагментів `HEAD`
+- [Sublime Text HTML Head Snippets](https://github.com/marcobiedermann/sublime-head-snippets) - Пакет Sublime Text для фрагментів `HEAD`
+- [head-it](https://github.com/hemanth/head-it) - CLI-інтерфейс для фрагментів `HEAD`
+- [vue-head](https://github.com/ktquez/vue-head) - Маніпуляція метаінформацією тегу `HEAD` для Vue.js
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## Other Formats
+## Інші формати
 
 - 📄 [PDF](https://gitprint.com/joshbuchea/HEAD/blob/master/README.md)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## 🌐 Translations
+## 🌐 Переклади
 
-- 🇮🇩 [Bahasa](https://github.com/rijdz/HEAD)
-- 🇧🇷 [Brazilian Portuguese](https://github.com/Webschool-io/HEAD)
-- 🇨🇳 [Chinese (Simplified)](https://github.com/Amery2010/HEAD)
-- 🇩🇪 [German](https://github.com/Shidigital/HEAD)
-- 🇮🇹 [Italian](https://github.com/Fakkio/HEAD)
-- 🇯🇵 [Japanese](https://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
-- 🇰🇷 [Korean](https://github.com/Lutece/HEAD)
-- 🇷🇺 [Russian/Русский](https://github.com/Konfuze/HEAD)
-- 🇪🇸 [Spanish](https://github.com/alvaroadlf/HEAD)
-- 🇹🇷 [Turkish/Türkçe](https://github.com/mkg0/HEAD)
+- 🇮🇩 [Індонезійська](https://github.com/rijdz/HEAD)
+- 🇧🇷 [Бразильська portuguese](https://github.com/Webschool-io/HEAD)
+- 🇨🇳 [Китайська (спрощена)](https://github.com/Amery2010/HEAD)
+- 🇩🇪 [Німецька](https://github.com/Shidigital/HEAD)
+- 🇮🇹 [Італійська](https://github.com/Fakkio/HEAD)
+- 🇯🇵 [Японська](https://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
+- 🇰🇷 [Корейська](https://github.com/Lutece/HEAD)
+- 🇷🇺 [Російська](https://github.com/Konfuze/HEAD)
+- 🇪🇸 [Іспанська](https://github.com/alvaroadlf/HEAD)
+- 🇹🇷 [Турецька](https://github.com/mkg0/HEAD)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
 
-## 🤝 Contributing
+## 🤝 Внесок
 
-**Open an issue or a pull request to suggest changes or additions.**
+**Відкрийте issue або pull request для пропозиції змін або доповнень.**
 
-### Guide
+### Посібник
 
-The **HEAD** repository consists of two branches:
+Репозиторій **HEAD** складається з двох гілок:
 
 #### 1. `master`
 
-This branch consists of the `README.md` file that is reflected on the [htmlhead.dev](https://htmlhead.dev/) website. All changes to the content of the guide should be made in this file.
+Ця гілка складається з файлу `README.md`, який відображається на веб-сайті [htmlhead.dev](https://htmlhead.dev/). Усі зміни до вмісту посібника мають бути зроблені в цьому файлі.
 
-Please follow these steps for pull requests:
+Дотримуйтесь цих кроків для pull requests:
 
 {:.list-style-default}
-- Modify only one tag, or one related set of tags at a time
-- Use double quotes on attributes
-- Don't include a trailing slash in self-closing elements — the HTML5 spec says they're optional
-- Consider including a link to documentation that supports your change
+- Змінюйте лише один тег або один пов'язаний набір тегів за раз
+- Використовуйте подвійні лапки для атрибутів
+- Не включайте кінцевий слеш у самозакриваючих елементах — специфікація HTML5 каже, що вони необов'язкові
+- Розгляньте можливість включення посилання на документацію, яка підтримує вашу зміну
 
 #### 2. `gh-pages`
 
-This branch is responsible for the [htmlhead.dev](https://htmlhead.dev/) website. We use [Jekyll](https://jekyllrb.com/) to deploy the `README.md` markdown file to [GitHub Pages](https://pages.github.com/). All website related modifications should be made in this branch.
+Ця гілка відповідає за веб-сайт [htmlhead.dev](https://htmlhead.dev/). Ми використовуємо [Jekyll](https://jekyllrb.com/) для розгортання файлу `README.md` markdown на [GitHub Pages](https://pages.github.com/). Усі модифікації, пов'язані з веб-сайтом, мають бути зроблені в цій гілці.
 
-You may find it helpful to review the [Jekyll Docs](https://jekyllrb.com/docs/home/) and understand how Jekyll works before working in this branch.
+Вам може бути корисно переглянути [Документацію Jekyll](https://jekyllrb.com/docs/home/) та зрозуміти, як працює Jekyll, перш ніж працювати в цій гілці.
 
-## 🌟 Contributors
+## 🌟 Учасники
 
-Check out all the super awesome [contributors](https://github.com/joshbuchea/HEAD/graphs/contributors) 🤩
+Перевірте всіх неймовірних [учасників](https://github.com/joshbuchea/HEAD/graphs/contributors) 🤩
 
-## 👤 Author
+## 👤 Автори
 
-**Josh Buchea**
+**Джош Бучеа**
 
 - GitHub: [@joshbuchea](https://github.com/joshbuchea)
 - Mastodon: [@joshbuchea@hachyderm.io](https://hachyderm.io/@joshbuchea)
 
-## 💛 Support
+**Serhii Shramko**
+- GitHub: [@Shramkoweb](https://github.com/Shramkoweb)
 
-If this project was helpful for you or your organization, please considering supporting my work directly:
 
-- 💛 [Sponsor me on GitHub](https://github.com/sponsors/joshbuchea)
-- ⭐️ [Star this project on GitHub](https://github.com/joshbuchea/HEAD)
-- 🐙 [Follow me on GitHub](https://github.com/joshbuchea)
-- 🐘 [Follow me on Mastodon](https://hachyderm.io/@joshbuchea)
+## 💛 Підтримка
 
-Everything helps, thanks! 🙏
+Якщо цей проект був корисним для вас або вашої організації, будь ласка, розгляньте можливість підтримки моєї роботи безпосередньо:
 
-— Josh
+- 💛 [Спонсоруйте мене на GitHub](https://github.com/sponsors/joshbuchea)
+- ⭐️ [Поставте зірочку цьому проекту на GitHub](https://github.com/joshbuchea/HEAD)
+- 🐙 [Підписатися на мене на GitHub](https://github.com/joshbuchea)
+- 🐘 [Підписатися на мене в Mastodon](https://hachyderm.io/@joshbuchea)
 
-## 📝 License
+Дякую! 🙏
+
+- [Джош](https://joshbuchea.com/)
+- [Serhii Shramko](https://shramko.dev/)
+
+## 📝 Ліцензія
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ назад до змісту](#зміст)**
